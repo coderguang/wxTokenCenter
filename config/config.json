@@ -1,0 +1,17 @@
+{
+    "port":"2100",
+    "configs":[
+    {
+         "category":"gzh",
+         "type":"yaohao",
+         "appid":"your_appid1",
+         "secret":"your_secret1"
+    },
+   {
+         "category":"xcx",
+         "type":"yaohao",
+         "appid":"your_appid2",
+          "secret":"your_secret2"
+        }
+    ]
+}
