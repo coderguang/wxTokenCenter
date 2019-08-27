@@ -3,7 +3,7 @@ package wxTokenCenterConfig
 import (
 	"encoding/json"
 	"io/ioutil"
-	wxTokenCenterDef "wx_common/wx_token_center/src/define"
+	wxTokenCenterDef "wxTokenCenter/src/define"
 
 	"github.com/coderguang/GameEngine_go/sglog"
 )

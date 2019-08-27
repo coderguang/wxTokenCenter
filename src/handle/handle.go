@@ -3,7 +3,7 @@ package wxTokenCenterHandle
 import (
 	"net/http"
 	"strings"
-	wxTokenCenterData "wx_common/wx_token_center/src/data"
+	wxTokenCenterData "wxTokenCenter/src/data"
 
 	"github.com/coderguang/GameEngine_go/sglog"
 )

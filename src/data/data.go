@@ -1,8 +1,8 @@
 package wxTokenCenterData
 
 import (
-	wxTokenCenterConfig "wx_common/wx_token_center/src/config"
-	wxTokenCenterDef "wx_common/wx_token_center/src/define"
+	wxTokenCenterConfig "wxTokenCenter/src/config"
+	wxTokenCenterDef "wxTokenCenter/src/define"
 
 	"github.com/coderguang/GameEngine_go/sgtime"
 

@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 	"os"
-	wxTokenCenterData "wx_common/wx_token_center/src/data"
-	wxTokenCenterHandle "wx_common/wx_token_center/src/handle"
+	wxTokenCenterData "wxTokenCenter/src/data"
+	wxTokenCenterHandle "wxTokenCenter/src/handle"
 
 	"github.com/coderguang/GameEngine_go/sgcmd"
 
