@@ -64,4 +64,10 @@ git clone git@github.com:coderguang/wxTokenCenter.git
    also,server will log this requires,like below:
    ![require_ok](https://github.com/coderguang/img/blob/master/wxTokenCenter/require_ok.png)
   
-   
+   ## About me
+
+**Author** | _[royalchen](https://www.royalchen.com)_
+---------- | -----------------
+email  | royalchen@royalchen.com
+qq  | royalchen@royalchen.com
+website | [www.royalchen.com](https://www.royalchen.com)
