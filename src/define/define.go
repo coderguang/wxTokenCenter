@@ -62,24 +62,28 @@ func (token *TokenData) GetAccessTokenFromWx() {
 
 	token.RequireFromWx++
 
+	sglog.Info("==============start get access token from wx,category:%s,type:%s", token.Category, token.Type)
+
 	params := "/cgi-bin/token?grant_type=client_credential&appid=" + token.Appid + "&secret=" + token.Secret
 
 	urls := []string{"api.weixin.qq.com", "api2.weixin.qq.com", "sh.api.weixin.qq.com", "sz.api.weixin.qq.com", "hk.api.weixin.qq.com"}
+
+	token.TokenStr = "{\"errcode\":1}"
 
 	success := false
 	for _, v := range urls {
 		url := "https://" + v + params
 		resp, err := http.Get(url)
 		if nil != err {
-			sglog.Error("get wx access token from %s error,err=%e", url, err)
+			sglog.Error("get wx access token from %s error,err=%s", url, err)
 		} else {
 			success = true
-			sglog.Info("get wx access token from %s success", url)
+			//sglog.Info("get wx access token from %s success", url)
 
 			defer resp.Body.Close()
 			body, err := ioutil.ReadAll(resp.Body)
 			if nil != err {
-				sglog.Error("get wx access token error,read resp body error,err=%e", err)
+				sglog.Error("get wx access token error,read resp body error,err=%s", err)
 				return
 			}
 			str := string(body)
@@ -88,7 +92,7 @@ func (token *TokenData) GetAccessTokenFromWx() {
 			decoder.UseNumber()
 			var result map[string]interface{}
 			if err := decoder.Decode(&result); err != nil {
-				sglog.Error("json parse failed,str=%s,err=%e", str, err)
+				sglog.Error("json parse failed,str=%s,err=%s", str, err)
 				return
 			}
 			sglog.Info("parse %s json", str)
@@ -115,7 +119,7 @@ func (token *TokenData) GetAccessTokenFromWx() {
 			}
 			sglog.Info("time:%d", time_num_value)
 
-			token.TokenStr = access_token_value
+			token.TokenStr = "{\"errcode\":0,\"token\":\"" + access_token_value + "\"}"
 			token.TimeoutDt = sgtime.New().Add(int(time_num_value))
 
 			sglog.Info("success parse json,token will be timeout at %s", token.TimeoutDt.NormalString())
@@ -125,6 +129,8 @@ func (token *TokenData) GetAccessTokenFromWx() {
 	}
 
 	if !success {
-		sglog.Error("get wx access error from all api,categor:%s,type:%s", token.Category, token.Type)
+		sglog.Error("==============end get wx access error from all api,categor:%s,type:%s", token.Category, token.Type)
+	} else {
+		sglog.Info("==============end get access token from wx success")
 	}
 }

@@ -13,7 +13,7 @@ type wx_token_center_handle struct{}
 func doGetAccessToken(w http.ResponseWriter, r *http.Request, flag chan bool) {
 	r.ParseForm()
 	if len(r.Form["key"]) <= 0 {
-		w.Write([]byte("")) // not param keys
+		w.Write([]byte("{\"errcode\":3}")) // not param keys
 		sglog.Debug("no key in this handle")
 		flag <- true
 		return
@@ -21,7 +21,7 @@ func doGetAccessToken(w http.ResponseWriter, r *http.Request, flag chan bool) {
 	rawkeys := r.Form["key"][0]
 	keys := strings.Split(rawkeys, ",")
 	if len(keys) < 2 {
-		w.Write([]byte(""))
+		w.Write([]byte("{\"errcode\":4}"))
 		sglog.Debug("require not enough params")
 		flag <- true
 		return

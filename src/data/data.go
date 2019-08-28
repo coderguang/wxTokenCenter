@@ -4,6 +4,8 @@ import (
 	wxTokenCenterConfig "wxTokenCenter/src/config"
 	wxTokenCenterDef "wxTokenCenter/src/define"
 
+	"github.com/coderguang/GameEngine_go/sgthread"
+
 	"github.com/coderguang/GameEngine_go/sgtime"
 
 	"github.com/coderguang/GameEngine_go/sglog"
@@ -31,7 +33,7 @@ func InitTokenData() {
 		if typeMap, ok := globalTokenDataMap.Data[v.Category]; ok {
 			if _, okex := typeMap[v.Type]; okex {
 				sglog.Error("duplate token config,category:%s,type:%s", v.Category, v.Type)
-				continue
+				sgthread.DelayExit(2)
 			} else {
 				tmp := new(wxTokenCenterDef.TokenData)
 				tmp.Category = v.Category
@@ -41,7 +43,7 @@ func InitTokenData() {
 				tmp.RequireFromLocal = 0
 				tmp.RequireFromWx = 0
 				tmp.TimeoutDt = sgtime.New()
-				tmp.TokenStr = ""
+				tmp.TokenStr = "{\"errcode\":1}"
 				tmp.GetAccessTokenFromWx()
 				typeMap[v.Type] = tmp
 			}
@@ -55,7 +57,7 @@ func InitTokenData() {
 			tmp.RequireFromLocal = 0
 			tmp.RequireFromWx = 0
 			tmp.TimeoutDt = sgtime.New()
-			tmp.TokenStr = ""
+			tmp.TokenStr = "{\"errcode\":1}"
 			tmp.GetAccessTokenFromWx()
 			typeMap = make(map[string]*wxTokenCenterDef.TokenData)
 			typeMap[v.Type] = tmp
@@ -84,7 +86,7 @@ func GetAccessToken(Category string, Type string) string {
 		}
 	}
 	sglog.Error("no this config,category:%s,type:%s", Category, Type)
-	return ""
+	return "{\"errcode\":2}"
 }
 
 func ShowAllTokeData() {

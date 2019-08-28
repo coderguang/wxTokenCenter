@@ -2,16 +2,22 @@
     "port":"2100",
     "configs":[
     {
-         "category":"gzh",
-         "type":"yaohao",
+         "category":"categoryOne",
+         "type":"typeOne",
          "appid":"your_appid1",
          "secret":"your_secret1"
     },
    {
-         "category":"xcx",
-         "type":"yaohao",
+         "category":"categoryOne",
+         "type":"typeTwo",
          "appid":"your_appid2",
           "secret":"your_secret2"
-        }
+    },
+    {
+          "category":"categoryTwo",
+          "type":"twoTypeOne",
+          "appid":"your_appid3",
+           "secret":"your_secret3"
+     }
     ]
 }
