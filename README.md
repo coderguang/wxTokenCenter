@@ -50,8 +50,18 @@ git clone git@github.com:coderguang/wxTokenCenter.git
 ```shell
     go run main.go config/config.json
 ```
-    if success,you will get output like below:
-    ![init_img](https://github.com/coderguang/img/tree/master/wxTokenCenter)
+   if success,you will get output like below:
    
+   ![init](https://github.com/coderguang/img/blob/master/wxTokenCenter/init.png)
     
-    
+### 4. client requier format
+```shell
+   curl -i https://your_ips/?key=gzh,yaohao
+```
+   you will get like below in client:
+  ![require](https://github.com/coderguang/img/blob/master/wxTokenCenter/require.png)
+  
+   also,server will log this requires,like below:
+   ![require_ok](https://github.com/coderguang/img/blob/master/wxTokenCenter/require_ok.png)
+  
+   
