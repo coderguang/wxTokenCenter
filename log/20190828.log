@@ -1,0 +1,25 @@
+2019/08/28 16:16:20.338 [info ]  log server init complete,path=./log/,level=debug
+2019/08/28 16:16:22.338 [info ]  ==============start get access token from wx,category:gzh,type:yaohao
+2019/08/28 16:16:22.717 [info ]  access_token:{"errcode":40164,"errmsg":"invalid ip 14.23.124.132, not in whitelist hint: [KcUQza01821501]"}
+2019/08/28 16:16:22.718 [info ]  parse {"errcode":40164,"errmsg":"invalid ip 14.23.124.132, not in whitelist hint: [KcUQza01821501]"} json
+2019/08/28 16:16:22.718 [error]  error token,code=40164
+2019/08/28 16:16:22.718 [error]  errmsg=invalid ip 14.23.124.132, not in whitelist hint: [KcUQza01821501]
+2019/08/28 16:16:22.718 [info ]  ==============start get access token from wx,category:xcx,type:yaohao
+2019/08/28 16:16:22.920 [info ]  access_token:{"access_token":"24_c_wmgfS7uXfhe0IfXa7megUiGLdyfiQqbF8KTPrZolR-jWH8FNEa4LIL5WI780-h3-cMrDI_z4yDH0sJXaECF_JrblWRbAHL_l7zZA7g9O5bI0U8D2zp17FeowvHggAI2n7Yf_ZgyEoqhBqHZHOdAEAMUB","expires_in":7200}
+2019/08/28 16:16:22.920 [info ]  parse {"access_token":"24_c_wmgfS7uXfhe0IfXa7megUiGLdyfiQqbF8KTPrZolR-jWH8FNEa4LIL5WI780-h3-cMrDI_z4yDH0sJXaECF_JrblWRbAHL_l7zZA7g9O5bI0U8D2zp17FeowvHggAI2n7Yf_ZgyEoqhBqHZHOdAEAMUB","expires_in":7200} json
+2019/08/28 16:16:22.920 [info ]  access_token_value:24_c_wmgfS7uXfhe0IfXa7megUiGLdyfiQqbF8KTPrZolR-jWH8FNEa4LIL5WI780-h3-cMrDI_z4yDH0sJXaECF_JrblWRbAHL_l7zZA7g9O5bI0U8D2zp17FeowvHggAI2n7Yf_ZgyEoqhBqHZHOdAEAMUB
+2019/08/28 16:16:22.920 [info ]  time:7200
+2019/08/28 16:16:22.921 [info ]  success parse json,token will be timeout at 2019-08-28 18:16:22
+2019/08/28 16:16:22.921 [info ]  ==============end get access token from wx success
+2019/08/28 16:16:22.921 [info ]  init token data success:size=2
+2019/08/28 16:16:22.921 [info ]  
+====please input your cmd====
+2019/08/28 16:16:22.921 [info ]  start require server.listen port:2100
+2019/08/28 16:23:02.621 [debug]  input data is  ===========>
+2019/08/28 16:23:02.621 [debug]  you should input a cmd like this format (string json array):
+2019/08/28 16:23:05.037 [info ]  log server init complete,path=./log/,level=debug
+2019/08/28 16:23:07.038 [info ]  ==============start get access token from wx,category:gzh,type:yaohao
+2019/08/28 16:23:07.230 [info ]  access_token:{"errcode":40164,"errmsg":"invalid ip 14.23.124.132, not in whitelist hint: [AmJ4QA05873612]"}
+2019/08/28 16:23:07.230 [info ]  parse {"errcode":40164,"errmsg":"invalid ip 14.23.124.132, not in whitelist hint: [AmJ4QA05873612]"} json
+2019/08/28 16:23:07.230 [error]  error token,code=40164
+2019/08/28 16:23:07.230 [error]  errmsg=invalid ip 14.23.124.132, not in whitelist hint: [AmJ4QA05873612]

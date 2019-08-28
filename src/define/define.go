@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"sync"
 
+	"github.com/coderguang/GameEngine_go/sgthread"
+
 	"github.com/coderguang/GameEngine_go/sglog"
 	"github.com/coderguang/GameEngine_go/sgtime"
 )
@@ -84,6 +86,9 @@ func (token *TokenData) GetAccessTokenFromWx() {
 			body, err := ioutil.ReadAll(resp.Body)
 			if nil != err {
 				sglog.Error("get wx access token error,read resp body error,err=%s", err)
+				if 1 == token.RequireFromWx {
+					sgthread.DelayExit(2)
+				}
 				return
 			}
 			str := string(body)
@@ -93,6 +98,9 @@ func (token *TokenData) GetAccessTokenFromWx() {
 			var result map[string]interface{}
 			if err := decoder.Decode(&result); err != nil {
 				sglog.Error("json parse failed,str=%s,err=%s", str, err)
+				if 1 == token.RequireFromWx {
+					sgthread.DelayExit(2)
+				}
 				return
 			}
 			sglog.Info("parse %s json", str)
@@ -100,6 +108,10 @@ func (token *TokenData) GetAccessTokenFromWx() {
 			if _, ok := result[wx_access_token_error_code]; ok {
 				sglog.Error("error token,code=%s", result[wx_access_token_error_code])
 				sglog.Error("errmsg=%s", result[wx_access_token_error_msg])
+
+				if 1 == token.RequireFromWx {
+					sgthread.DelayExit(2)
+				}
 				return
 			}
 
@@ -107,6 +119,9 @@ func (token *TokenData) GetAccessTokenFromWx() {
 			access_token_value, ok := access_token.(string)
 			if !ok {
 				sglog.Error("parse access_token failed,access_token=%s", access_token)
+				if 1 == token.RequireFromWx {
+					sgthread.DelayExit(2)
+				}
 				return
 			}
 			sglog.Info("access_token_value:%s", access_token_value)
@@ -115,6 +130,9 @@ func (token *TokenData) GetAccessTokenFromWx() {
 			time_num_value, err := time_num.(json.Number).Int64()
 			if err != nil {
 				sglog.Error("parase time_num failed,time_num=%d", time_num)
+				if 1 == token.RequireFromWx {
+					sgthread.DelayExit(2)
+				}
 				return
 			}
 			sglog.Info("time:%d", time_num_value)
@@ -130,6 +148,9 @@ func (token *TokenData) GetAccessTokenFromWx() {
 
 	if !success {
 		sglog.Error("==============end get wx access error from all api,categor:%s,type:%s", token.Category, token.Type)
+		if 1 == token.RequireFromWx {
+			sgthread.DelayExit(2)
+		}
 	} else {
 		sglog.Info("==============end get access token from wx success")
 	}
