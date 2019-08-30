@@ -3,7 +3,7 @@ wxTokenCenter
 
 [![Build Status](https://travis-ci.org/coderguang/wxTokenCenter.svg?branch=master)](https://travis-ci.org/coderguang/wxTokenCenter)
 ![](https://img.shields.io/badge/language-golang-orange.svg)
-[![codebeat badge](https://codebeat.co/badges/a4d5f264-4add-4c65-b855-6a5b474da06e)](https://codebeat.co/projects/github-com-coderguang-wxtokencenter-master)
+[![codebeat badge](https://codebeat.co/badges/50602d7c-235d-4353-bf0d-0f5933c6e121)](https://codebeat.co/projects/github-com-coderguang-wxtokencenter-master)
 [![](https://img.shields.io/badge/wp-@royalchen-blue.svg)](https://www.royalchen.com)
 
 ## wx token manager tool
